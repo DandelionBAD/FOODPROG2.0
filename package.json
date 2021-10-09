@@ -2,21 +2,28 @@
   "name": "foodprog2.0",
   "version": "1.0.0",
   "description": "Progetto per Programazione II",
-  "main": "index.js",
+  "author": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DandelionBAD/FOODPROG2.0.git"
+  "main": "index.js",
+  "dependencies": {
+    "@vue/cli": "^4.5.13",
+    "vuetify": "^2.4.0"
   },
-  "author": "",
-  "license": "ISC",
+  "devDependencies": {
+    "sass": "~1.32.0",
+    "sass-loader": "^10.0.0",
+    "vue-cli-plugin-vuetify": "~2.4.3",
+    "vuetify-loader": "^1.7.0"
+  },
   "bugs": {
     "url": "https://github.com/DandelionBAD/FOODPROG2.0/issues"
   },
   "homepage": "https://github.com/DandelionBAD/FOODPROG2.0#readme",
-  "dependencies": {
-    "@vue/cli": "^4.5.13"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DandelionBAD/FOODPROG2.0.git"
   }
 }
