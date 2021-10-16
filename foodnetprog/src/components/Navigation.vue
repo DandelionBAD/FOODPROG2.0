@@ -1,24 +1,18 @@
 <template>
-  <div id="navigation">
-    <!-- Toolbar -->
-    <v-toolbar clipped-left app dark class="primary">
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title class="mr-5 text-uppercase">
-        <router-link :to="'/'">
-          <span class="font-weight-light white--text">Movies</span>
-          <span class="font-weight-black white--text">101</span>
-        </router-link>
-      </v-toolbar-title>
+  <div id="Navigation">
+    <v-app-bar color="primary">
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <v-toolbar-title>FOOD<b>PROG</b>2.0</v-toolbar-title>
+      <v-spacer></v-spacer>
       <v-text-field
         hide-details
         solo-inverted
         flat
-        prepend-inner-icon="search"
-        label="Cerca"
-        v-model="query"
-        @keyup.enter="search()"
+        prepend-inner-icon="mdi-magnify"
+        label="Cerca prodotto..."
       ></v-text-field>
-    </v-toolbar>
+    </v-app-bar>
+
     <!-- Navigation drawer -->
     <v-navigation-drawer app clipped v-model="drawer">
       <v-list v-for="(item, index) in drawerItems" :key="index">
@@ -39,39 +33,40 @@
             <v-list-tile-title>
               {{ item.title }}
             </v-list-tile-title>
-          </v-list-tile-content>
+          </v-list-tile-content><br>
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <h1>test</h1>
+ 
   </div>
 </template>
-
 <script>
 export default {
   name: "Navigation",
   data() {
     return {
-      drawer: true, // valore di apertura/chiusura del drawer
-      query: "", // stringa di ricerca (di default è vuota)
+      drawer: true, 
+      query: "",
       drawerItems: {
         // voci del menù
         firstChunk: {
-          subheader: "Film",
+          subheader: "Prodotti",
           tiles: [
-            { title: "Popolari", icon: "star", route: "/popular" },
-            { title: "Più votati", icon: "thumb_up", route: "/top-rated" },
-            { title: "Nuove uscite", icon: "new_releases", route: "/latest" },
-            { title: "In arrivo", icon: "local_movies", route: "/upcoming" }
+            { title: "Più venduti", icon: "mdi-star", route: "/popular" },
+            { title: "Miglior eco-score", icon: "local_florist", route: "/top-eco" },
+            { title: "Miglior nutri-score", icon: "emoji_nature", route: "/top-nutri" },
           ]
         },
         secondChunk: {
           subheader: "Collezioni",
           tiles: [
-            { title: "Preferiti", icon: "favorite", route: "/favorites" },
-            { title: "Cronologia", icon: "check_circle", route: "/history" },
-            // eslint-disable-next-line
-            { title: "Watchlist", icon: "playlist_add_check", route: "/watchlist" }
+            { title: "Preferiti", icon: "favorite_border", route: "/favorites" },
+          ]
+        },
+        thirdChunk: {
+          subheader: "About",
+          tiles: [
+            { title: "Il progetto", icon: "article", route: "/about" },
           ]
         }
       }
