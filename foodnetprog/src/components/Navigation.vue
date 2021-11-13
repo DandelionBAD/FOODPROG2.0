@@ -58,7 +58,7 @@ export default {
   name: "Navigation",
   data() {
     return {
-      drawer: true,
+      drawer: false,
       query: "",
       drawerItems: {
         // voci del menù
