@@ -9,6 +9,7 @@
   "main": "index.js",
   "dependencies": {
     "@vue/cli": "^4.5.13",
+    "firebase": "^9.6.1",
     "vuetify": "^2.4.0"
   },
   "devDependencies": {
