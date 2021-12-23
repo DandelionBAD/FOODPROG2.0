@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+   web:
+      container_name: web-services
+      image: h1ddengames/vuetifyjs-node
+      ports:
+        - 80:8080
+      volumes:
+        - ./foodnetprog:/app
+        - /app/node_modules/
